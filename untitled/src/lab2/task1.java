@@ -1,24 +1,29 @@
 package lab2;
+
 import java.util.Scanner;
 public class task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Podaj liczbę:");
-        int array_length = scanner.nextInt();
+        System.out.print("Podaj wielkość tablicy: ");
+        int rozmiarTablicy = scanner.nextInt();
 
-        char[] array = new char[array_length];
 
-        System.out.println("Podaj " + array_length + " znaki:");
+        char[] tablica = new char[rozmiarTablicy];
 
-        for (int i = 0; i < array_length; i++) {
-            System.out.println("Znak" +(i+1)+" :");
-            array[i] = scanner.next().charAt(0);
+
+        for (int i = 0; i < rozmiarTablicy; i++) {
+            System.out.print("Podaj znak do pozycji " + (i + 1) + ": ");
+            char znak = scanner.next().charAt(0);
+            tablica[i] = znak;
         }
-        System.out.print("Tablica znaków:");
-        for (int i = 0; i < array_length; i++) {
-            System.out.print(array[i] + " ");
+
+        System.out.print("Zawartość tablicy: [");
+        for (int i = 0; i < rozmiarTablicy; i++) {
+            System.out.print(tablica[i]);
+            if (i < rozmiarTablicy - 1) {
+                System.out.print(", ");
+            }
         }
-        System.out.println();
-        scanner.close();
+        System.out.println("]");
     }
 }
