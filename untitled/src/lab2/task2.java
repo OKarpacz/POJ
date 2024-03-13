@@ -14,7 +14,7 @@ import java.util.Scanner;
 
          System.out.print("Podaj wartość początkową: ");
          int startValue = scanner.nextInt();
-         array[0] = start Value;
+         array[0] = startValue;
 
 
          for (int i = 1; i < size; i++) {
