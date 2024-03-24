@@ -58,15 +58,11 @@ public class Remote {
             TV tv = new TV();
             lab3.Remote remote = new lab3.Remote(tv);
             //fix this ~!
-            remote.turnOn();
-
-
-            remote.changeChannelUp();
-            remote.increaseVolume();
-
-
-            remote.turnOff();
-
+           System.out.println("\nHELLO TV");
+            System.out.println("+ Increse Volume");
+            System.out.println("- Decrese Volume");
+            System.out.println("> Next Channel");
+            //FIX IT
         }
     }
 
