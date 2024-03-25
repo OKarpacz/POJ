@@ -6,7 +6,7 @@ public class task6 {
 
         if(c == 0)
             return (a>b) ? b : a;
-            return a>b ? NWD(c,b) : NWD(c,a);
+            return (a>b) ? NWD(c,b) : NWD(c,a);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

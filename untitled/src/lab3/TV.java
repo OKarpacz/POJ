@@ -5,9 +5,11 @@ public class TV {
     private int volume;
     private boolean on;
 
+    private boolean off;
+
     public TV() {
         this.channel = 1;
-        this.volume = 50;
+        this.volume = 5;
         this.on = false;
     }
 
@@ -33,5 +35,13 @@ public class TV {
 
     public void setOn(boolean on) {
         this.on = on;
+    }
+
+    public boolean isOff(){
+        return off;
+    }
+
+    public void  setOff(boolean off){
+        this.off = off;
     }
 }

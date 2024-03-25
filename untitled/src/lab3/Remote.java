@@ -10,26 +10,26 @@ public class Remote {
     }
 
     public void changeChannelUp() {
-        if (tv.isOn() && tv.getChannel() < 20) {
+        if (tv.isOn() && tv.getChannel() <= 20) {
             tv.setChannel(tv.getChannel() + 1);
         } else {
-            System.out.println("Telewizor jest wyłączony lub już jesteś na ostatnim kanale.");
+            System.out.println("The TV is off or your are on the last channel.");
         }
     }
 
     public void changeChannelDown() {
-        if (tv.isOn() && tv.getChannel() > 1) {
+        if (tv.isOn() && tv.getChannel() >= 1) {
             tv.setChannel(tv.getChannel() - 1);
         } else {
-            System.out.println("Telewizor jest wyłączony lub już jesteś na pierwszym kanale.");
+            System.out.println("The TV is off or your are on the first channel.");
         }
     }
 
     public void increaseVolume() {
-        if (tv.isOn() && tv.getVolume() < 10) {
+        if (tv.isOn() && tv.getVolume() <= 10) {
             tv.setVolume(tv.getVolume() + 1);
         } else {
-            System.out.println("Telewizor jest wyłączony lub osiągnięto maksymalną głośność.");
+            System.out.println("The TV is off or your Volume is on MAX");
         }
     }
 
@@ -37,33 +37,27 @@ public class Remote {
         if (tv.isOn() && tv.getVolume() > 1) {
             tv.setVolume(tv.getVolume() - 1);
         } else {
-            System.out.println("Telewizor jest wyłączony lub jesteś na minimalnej głośności.");
+            System.out.println("The TV is off or your Volume is on MIN");
         }
     }
 
     public void turnOn() {
         tv.setOn(true);
-        System.out.println("Telewizor został włączony.");
+        System.out.println("The TV has been turned ON");
     }
 
     public void turnOff() {
         tv.setOn(false);
-        System.out.println("Telewizor został wyłączony.");
+        System.out.println("The TV has been turned OFF");
     }
 
-    public void setChannel(int channel) {
-        if (tv.isOn()) {
-            tv.setChannel(channel);
-        } else {
-            System.out.println("Włącz najpierw telewizor!");
-        }
-    }
 
     public void setVolume(int volume) {
         if (tv.isOn()) {
+            System.out.println("Set yout Volume 0-100: ");
             tv.setVolume(volume);
         } else {
-            System.out.println("Włącz najpierw telewizor!");
+            System.out.println("Turn on the TV first");
         }
     }
 
@@ -72,16 +66,15 @@ public class Remote {
         Remote remote = new Remote(tv);
 
         System.out.println("\nHELLO TV");
-        System.out.println("+ Increase Volume");
-        System.out.println("- Decrease Volume");
         System.out.println("> Next Channel");
         System.out.println("< Previous Channel");
-        System.out.println("S Set Channel");
+        System.out.println("+ Increase Volume");
+        System.out.println("- Decrease Volume");
         System.out.println("O Turn On");
         System.out.println("F Turn Off");
 
         Scanner scanner = new Scanner(System.in);
-//needs a fix
+
         while (true) {
             System.out.print("Enter your choice: ");
             char choice = scanner.next().charAt(0);
@@ -98,11 +91,6 @@ public class Remote {
                     break;
                 case '<':
                     remote.changeChannelDown();
-                    break;
-                case 'S':
-                    System.out.print("Enter channel number: ");
-                    int channel = scanner.nextInt();
-                    remote.setChannel(channel);
                     break;
                 case 'O':
                     remote.turnOn();
