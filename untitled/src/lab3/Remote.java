@@ -10,7 +10,7 @@ public class Remote {
     }
 
     public void changeChannelUp() {
-        if (tv.isOn() && tv.getChannel() <= 20) {
+        if (tv.isOn() && tv.getChannel() <= 10) {
             tv.setChannel(tv.getChannel() + 1);
         } else {
             System.out.println("The TV is off or your are on the last channel.");
@@ -60,18 +60,27 @@ public class Remote {
             System.out.println("Turn on the TV first");
         }
     }
+    public void displayStatus() {
+        if (tv.isOn()) {
+            System.out.println("Current Channel: " + tv.getChannel());
+            System.out.println("Current Volume: " + tv.getVolume());
+        } else {
+            System.out.println("Turn on the TV first");
+        }
+    }
 
     public static void main(String[] args) {
         TV tv = new TV();
         Remote remote = new Remote(tv);
 
-        System.out.println("\nHELLO TV");
+        System.out.println("\n    HELLO TV");
         System.out.println("> Next Channel");
         System.out.println("< Previous Channel");
         System.out.println("+ Increase Volume");
         System.out.println("- Decrease Volume");
         System.out.println("O Turn On");
         System.out.println("F Turn Off");
+        System.out.println("D Display TV Settings");
 
         Scanner scanner = new Scanner(System.in);
 
@@ -98,9 +107,10 @@ public class Remote {
                 case 'F':
                     remote.turnOff();
                     break;
+                case 'D':
+                    remote.displayStatus();
                 default:
-                    System.out.println("Invalid choice!");
-
+                    System.out.println("");
             }
         }
     }
