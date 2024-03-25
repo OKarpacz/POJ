@@ -10,7 +10,7 @@ public class Remote {
     }
 
     public void changeChannelUp() {
-        if (tv.isOn() && tv.getChannel() <= 10) {
+        if (tv.isOn() && tv.getChannel() < 10) {
             tv.setChannel(tv.getChannel() + 1);
         } else {
             System.out.println("The TV is off or your are on the last channel.");
@@ -18,7 +18,7 @@ public class Remote {
     }
 
     public void changeChannelDown() {
-        if (tv.isOn() && tv.getChannel() >= 1) {
+        if (tv.isOn() && tv.getChannel() > 1) {
             tv.setChannel(tv.getChannel() - 1);
         } else {
             System.out.println("The TV is off or your are on the first channel.");
@@ -26,7 +26,7 @@ public class Remote {
     }
 
     public void increaseVolume() {
-        if (tv.isOn() && tv.getVolume() <= 10) {
+        if (tv.isOn() && tv.getVolume() < 10) {
             tv.setVolume(tv.getVolume() + 1);
         } else {
             System.out.println("The TV is off or your Volume is on MAX");
@@ -34,7 +34,7 @@ public class Remote {
     }
 
     public void decreaseVolume() {
-        if (tv.isOn() && tv.getVolume() > 1) {
+        if (tv.isOn() && tv.getVolume() >= 1) {
             tv.setVolume(tv.getVolume() - 1);
         } else {
             System.out.println("The TV is off or your Volume is on MIN");
@@ -54,7 +54,6 @@ public class Remote {
 
     public void setVolume(int volume) {
         if (tv.isOn()) {
-            System.out.println("Set yout Volume 0-100: ");
             tv.setVolume(volume);
         } else {
             System.out.println("Turn on the TV first");
@@ -109,8 +108,6 @@ public class Remote {
                     break;
                 case 'D':
                     remote.displayStatus();
-                default:
-                    System.out.println("");
             }
         }
     }
