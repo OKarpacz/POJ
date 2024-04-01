@@ -16,10 +16,9 @@ public class Ulamki{
     public String dodawanie() {
         if (mianownikOne == mianownikTwo) {
             return (licznikOne + licznikTwo) + "/" + mianownikOne;
-        } else if (mianownikTwo != mianownikOne) {
+        } else {
             return( (licznikOne * mianownikTwo) + (licznikTwo * mianownikOne) + "/" + (mianownikOne * mianownikTwo));
         }
-        return "Cos poszlo nie tak";
     }
 
     public String odejmowanie(){
