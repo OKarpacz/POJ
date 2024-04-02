@@ -1,7 +1,7 @@
 package lab4;
 
 public class Wyscig {
-    //Poprawienie tutaj tego i dodanie Scanner dla lepszego uzytkowania
+    //Poprawienie tego i dodanie Scanner dla lepszego uzytkowania
     public static void main(String[] args) {
         Zawodnik zawodnik1 = new Zawodnik("Adam", 5, 10);
         Zawodnik zawodnik2 = new Zawodnik("Bartek", 6, 11);
