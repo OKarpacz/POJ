@@ -1,8 +1,6 @@
 package lab4;
 
 import java.util.Random;
-//Poprawienie skladu
-
 public class Zawodnik {
 String imie;
 int predkoscMinimalna;
