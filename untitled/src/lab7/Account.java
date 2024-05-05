@@ -1,3 +1,4 @@
+package lab7;
 public class Account {
     private String accountName;
     private double balance;
@@ -7,8 +8,11 @@ public class Account {
         this.balance = initialBalance;
     }
 
-    public int withdraw(int amount) {
-        balance-=amount;
+    public int withdraw(int amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            throw new InsufficientFundsException("Insufficient funds!");
+        }
+        balance -= amount;
         return amount;
     }
 

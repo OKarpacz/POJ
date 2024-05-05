@@ -1,3 +1,4 @@
+package lab7;
 import java.util.Scanner;
 
 public class MainBankException {
@@ -17,17 +18,31 @@ public class MainBankException {
         }
         System.out.println("How much do you want to withdraw?");
         int amount = getAmount();
-        account.withdraw(amount);
-        System.out.printf("Thank you for using our service. Your current balance is %.2f $", account.getBalance());
+        try {
+            account.withdraw(amount);
+            System.out.printf("Thank you for using our service. Your current balance is %.2f $", account.getBalance());
+        } catch (InsufficientFundsException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
     private static Account createNewAccount() {
         System.out.println("What is your name?");
         String name = scanner.nextLine();
-        System.out.println("How much do you want to put down to your account?");
-        int initialAmount = getAmount();
+        int initialAmount = 0;
+        boolean validAmount = false;
+        while (!validAmount) {
+            System.out.println("How much do you want to put down to your account?");
+            try {
+                initialAmount = getAmount();
+                validAmount = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid initial amount. Please enter a valid number.");
+            }
+        }
         return new Account(name, initialAmount);
     }
+
 
     private static int getAmount() {
         return Integer.parseInt(scanner.nextLine());
