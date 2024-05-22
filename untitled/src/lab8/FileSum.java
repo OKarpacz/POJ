@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 public class FileSum {
     public static void main(String[] args) {
-        String filepath = "Input.txt";
+        String filepath = "Input"; // Problem ze znalezieniem pliku do poprawy to!
         int sum = 0;
         boolean isSecondLine = false;
 
